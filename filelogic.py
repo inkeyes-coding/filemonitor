@@ -8,8 +8,6 @@ startPath = "/Users/justin/demo/start/"
 tvEndPath = "/Users/justin/demo/end/tv/"
 # Path containing directories for files to be sorted into
 movieEndPath = "/Users/justin/demo/end/movies/"
-# Array of all files in the starting path
-allFiles = os.listdir(startPath)
 
 
 # Function to seperate and process the name of the of the content
@@ -87,8 +85,10 @@ def move_files(parsedName, numerics, inputFileName):
         shutil.move(startPath + inputFileName, moviePath + "/" + inputFileName)
 
 
-# Main program:
+# Main program: ***** This has been moved into dog.py for execution *****
 # This loop iterates over each file name found in the allFiles array.
 # For each file name, it parses the name and date/season info and them moves the file based on that data.
-for j in allFiles:
-    move_files(parse_name(j), parse_numerics(j), j)
+
+# for j in os.listdir(startPath):
+#     if j.lower().endswith(('.asf', '.avi', '.mov', '.mp4', '.mpeg', '.mpegts', '.ts', '.mkv', '.wmv', '.srt', '.txt')):
+#         move_files(parse_name(j), parse_numerics(j), j)
